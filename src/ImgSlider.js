@@ -4,8 +4,8 @@
 
 
 import React, { Component ,PropTypes,findDOMNode} from 'react';
-import ClassNameMixin from './utils/ClassNameMixin';
 import classNames from 'classnames';
+require('./slider.less');
 
 /**
  *  照片浏览组件<br />
@@ -74,8 +74,7 @@ import classNames from 'classnames';
  * @demo imgSlider.js {源码}
  * @show true
  * */
-@ClassNameMixin
-export default class ImgSlider extends Component{
+export  class ImgSlider extends Component{
     constructor(props,context) {
         super(props, context);
         this.renderDisplay=this.renderDisplay.bind(this);

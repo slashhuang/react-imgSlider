@@ -15,13 +15,6 @@ module.exports =extend({}, {
         publicPath:'/example/bundle',
     },
     module:{
-        preLoaders: [
-            {
-                test: /\.(js|jsx)$/,
-                exclude: /node_modules/,
-                loader: 'eslint-loader'
-            },
-        ],
         loaders:[
             {
                 test: /\.jsx?$/,
@@ -40,9 +33,9 @@ module.exports =extend({}, {
                 test   : /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
                 loader : 'file-loader'
             },
-            { 
-                test: /\.html$/, 
-                loader: "handlebars-loader" 
+            {
+                test: /\.html$/,
+                loader: "handlebars-loader"
             },
             {
                 test: /\.(png|jpg)$/,

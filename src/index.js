@@ -1,5 +1,4 @@
-import Welcome from './welcome.js';
-import '../less/index.less';
+import {ImgSlider} from './ImgSlider';
 module.exports={
-    Welcome
+    ImgSlider
 };

@@ -1,20 +1,12 @@
 var gulp = require('gulp');
 var gutil = require('gulp-util');
 var webpack = require('webpack');
-var Server = require('karma').Server;
 var demoWebpackConfig = require('./webpack/demo.config');
 var webpackConfig = require('./webpack/webpack.config');
 var WebpackDevServer = require("webpack-dev-server");
 var open = require('gulp-open');
 
 var babel = require('gulp-babel');
-
-gulp.task('karma', function (done) {
-  new Server({
-    configFile: __dirname + '/karma.conf.js',
-    singleRun: true
-  }, done).start();
-});
 
 gulp.task('open', function () {
   gulp.src(__filename)
@@ -28,9 +20,6 @@ gulp.task('demo-webpack', function(done) {
       'webpack/hot/dev-server'//语法错误，也reload
   );
     //开发环境添加react-hot
-  config.module.loaders[0].loaders=[
-          'react-hot',//keep it mounted, preserving the state
-          'babel'];
   var compiler = webpack(config);
   var server = new WebpackDevServer(compiler, {
     hot: true,
